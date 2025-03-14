@@ -22,7 +22,11 @@ export async function GET() {
     return NextResponse.json(serializedOrders);
   } catch (error) {
     return NextResponse.json(
-      { error: "Error al obtener órdenes" + error },
+      {
+        error: `Error al obtener órdenes: ${
+          error instanceof Error ? error.message : JSON.stringify(error)
+        }`,
+      },
       { status: 500 }
     );
   }
