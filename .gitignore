@@ -39,3 +39,23 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Prisma
+node_modules
+.env
+.env.*
+!.env.example
+prisma/migrations/*/
+.vercel
+.next/
+*.log
+.DS_Store
+
+# Keep migration history but ignore dev migrations
+prisma/migrations/dev/
+prisma/migrations/*/migration_lock.toml
+
+# Prisma generated files
+.prisma/
+prisma/.env
+prisma/client/
